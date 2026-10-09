@@ -1,0 +1,39 @@
+schema_version: 1
+
+experiment:
+  name: emscad_laya_supervised
+  training_seeds: [42, 43, 44]
+
+dataset:
+  adapter: emscad
+  version: null  # Dataset preparation will pin the source and content.
+  split_seed: 2026
+  split_manifest: null  # Set to ../data/emscad/splits.json after preparation.
+  evidence_template: job_posting_v1
+
+model:
+  adapter: laya
+  checkpoint: convaiinnovations/laya
+  revision: null  # Replace with the checkpoint's immutable 40-character commit SHA.
+  max_length: 512
+
+training:
+  objective: cross_entropy
+  strategy: full
+  epochs: 4
+  batch_size: 8
+  gradient_accumulation_steps: 8
+  learning_rate: 0.000025
+  weight_decay: 0.0
+
+calibration:
+  method: temperature_scaling
+
+evaluation:
+  selection_metric: average_precision
+  review_budget_fraction: 0.05
+
+runtime:
+  device: cpu
+  precision: float32
+  deterministic: true
