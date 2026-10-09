@@ -15,8 +15,6 @@ def seed_everything(seed: int, *, torch: Any = None, deterministic: bool = True)
     call this before constructing models/loaders, and seed their loader workers.
     Determinism remains dependent on hardware, kernels, and framework versions.
     """
-    if type(seed) is not int or not 0 <= seed <= 2**32 - 1:
-        raise ValueError("seed must be an integer in [0, 2**32 - 1]")
     random.seed(seed)
     np.random.seed(seed)
     if torch is not None:

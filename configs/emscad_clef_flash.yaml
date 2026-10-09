@@ -1,15 +1,14 @@
 # Preparation example; these settings have not been validated by a Clef adapter.
-schema_version: 1
-
 experiment:
   name: emscad_clef_flash_supervised
-  training_seeds: [42, 43, 44]
+  seed: 42
 
 dataset:
   adapter: emscad
   version: null
   split_seed: 2026
   split_manifest: null
+  split_id: null
   evidence_template: job_posting_v1
 
 model:

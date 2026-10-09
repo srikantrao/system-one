@@ -1,14 +1,13 @@
-schema_version: 1
-
 experiment:
   name: emscad_laya_supervised
-  training_seeds: [42, 43, 44]
+  seed: 42  # Override with --seed 43 or --seed 44 for another run.
 
 dataset:
   adapter: emscad
   version: null  # Dataset preparation will pin the source and content.
   split_seed: 2026
-  split_manifest: null  # Set to ../data/emscad/splits.json after preparation.
+  split_manifest: null  # Set to data/emscad/splits.json after preparation.
+  split_id: null  # Dataset preparation will identify the frozen partition membership.
   evidence_template: job_posting_v1
 
 model:
