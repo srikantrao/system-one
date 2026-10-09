@@ -1,0 +1,14 @@
+experiment:
+  name: emscad_data
+  seed: 2026  # Fix this across model experiments; this is the split seed.
+
+source:
+  version: 1
+  url: https://www.kaggle.com/api/v1/datasets/download/shivamb/real-or-fake-fake-jobposting-prediction?datasetVersionNumber=1
+  csv_sha256: 59253295129d8b6a27607f9904f7d4ddf4dbb0ee35e079c7eb51b58b5e62bf60
+  expected_rows: 17880
+  expected_fraud_rows: 866
+
+evidence_template: job_posting_v1
+group_description_min_chars: 200
+# Contract v1 fixes ten grouped folds: 6 train, 1 validation, 1 calibration, 2 test.

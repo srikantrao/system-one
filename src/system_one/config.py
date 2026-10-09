@@ -65,8 +65,11 @@ class RuntimeConfig(StrictConfig):
     deterministic: bool = True
 
 
-class RunConfig(StrictConfig):
+class ExperimentSettings(StrictConfig):
     experiment: ExperimentConfig
+
+
+class RunConfig(ExperimentSettings):
     dataset: DatasetConfig
     model: ModelConfig
     training: TrainingConfig

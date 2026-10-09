@@ -5,10 +5,10 @@ experiment:
 
 dataset:
   adapter: emscad
-  version: null
+  version: kaggle-v1
   split_seed: 2026
-  split_manifest: null
-  split_id: null
+  split_manifest: null  # Set to results/<data-experiment>/<run-id>/splits.json.
+  split_id: null  # Copy the ID printed by scripts/prepare_emscad.py.
   evidence_template: job_posting_v1
 
 model:
